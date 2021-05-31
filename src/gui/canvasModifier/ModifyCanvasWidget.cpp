@@ -53,6 +53,7 @@ ModifyCanvasWidget::ModifyCanvasWidget() :
 
 ModifyCanvasWidget::~ModifyCanvasWidget()
 {
+	delete mSelectionHandler;
 	delete mKeyHelper;
 	delete mColorDialogButton;
 	delete mZoomPicker;
