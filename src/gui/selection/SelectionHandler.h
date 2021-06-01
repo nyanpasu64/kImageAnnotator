@@ -34,7 +34,7 @@ class SelectionHandler : public QObject
 {
 Q_OBJECT
 public:
-	explicit SelectionHandler(ISelectionRestrictor *selectionRestrictor);
+    explicit SelectionHandler(ISelectionRestrictor *selectionRestrictor, QObject *parent);
 	~SelectionHandler() override;
 	void init(AnnotationArea *annotationArea);
 	QRectF selection() const;

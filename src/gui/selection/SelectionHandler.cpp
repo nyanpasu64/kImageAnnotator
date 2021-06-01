@@ -21,7 +21,8 @@
 
 namespace kImageAnnotator {
 
-SelectionHandler::SelectionHandler(ISelectionRestrictor *selectionRestrictor) :
+SelectionHandler::SelectionHandler(ISelectionRestrictor *selectionRestrictor, QObject *parent) :
+    QObject(parent),
 	mAnnotationArea(nullptr),
 	mSelectionRestrictor(selectionRestrictor),
 	mRestrictionEnabled(true)

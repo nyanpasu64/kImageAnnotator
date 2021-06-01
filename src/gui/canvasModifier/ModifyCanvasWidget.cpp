@@ -24,7 +24,7 @@ namespace kImageAnnotator {
 
 ModifyCanvasWidget::ModifyCanvasWidget() :
 	mAnnotationArea(nullptr),
-	mSelectionHandler(new SelectionHandler(new ModifyCanvasSelectionRestrictor)),
+    mSelectionHandler(new SelectionHandler(new ModifyCanvasSelectionRestrictor, this)),
 	mModifyCanvasView(new ModifyCanvasView(mSelectionHandler, mKeyHelper, this)),
 	mKeyHelper(new KeyHelper()),
 	mApplyButton(new QPushButton(this)),
@@ -53,7 +53,6 @@ ModifyCanvasWidget::ModifyCanvasWidget() :
 
 ModifyCanvasWidget::~ModifyCanvasWidget()
 {
-	delete mSelectionHandler;
 	delete mKeyHelper;
 	delete mColorDialogButton;
 	delete mZoomPicker;
