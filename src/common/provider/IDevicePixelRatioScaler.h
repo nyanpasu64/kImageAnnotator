@@ -20,11 +20,14 @@
 #ifndef KIMAGEANNOTATOR_IDEVICEPIXELRATIOSCALER_H
 #define KIMAGEANNOTATOR_IDEVICEPIXELRATIOSCALER_H
 
+#include <QRectF>
+
 namespace kImageAnnotator {
 
 class IDevicePixelRatioScaler
 {
 public:
+	virtual ~IDevicePixelRatioScaler() = default;
 	virtual QRectF scale(const QRectF &rect) const = 0;
 	virtual qreal scaleFactor() const = 0;
 };

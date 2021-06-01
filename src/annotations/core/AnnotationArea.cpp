@@ -21,7 +21,8 @@
 
 namespace kImageAnnotator {
 
-AnnotationArea::AnnotationArea(Config *config, AbstractSettingsProvider *settingsProvider, IDevicePixelRatioScaler *devicePixelRatioScaler, ZoomValueProvider *zoomValueProvider) :
+AnnotationArea::AnnotationArea(Config *config, AbstractSettingsProvider *settingsProvider, IDevicePixelRatioScaler *devicePixelRatioScaler, ZoomValueProvider *zoomValueProvider, QObject *parent) :
+	QGraphicsScene(parent),
 	mUndoStack(new UndoStack),
 	mBackgroundImage(nullptr),
 	mCurrentItem(nullptr),
@@ -67,6 +68,7 @@ AnnotationArea::~AnnotationArea()
 	delete mUndoStack;
 	delete mItemModifier;
 	delete mItemCopier;
+	delete mDevicePixelRatioScaler;
 }
 
 void AnnotationArea::loadImage(const QPixmap &image)
